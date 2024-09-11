@@ -1,0 +1,155 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0; /* Remove as margens do body */
+    background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.site {
+    position: relative; /* Adiciona posicionamento relativo ao contêiner */
+    width: 100%;
+    max-width: 375px;
+    height: 100vh; /* Garantir que o site ocupe toda a altura do navegador */
+    display: flex;
+    flex-direction: column; /* Organizar os elementos em coluna */
+    background-color: red;
+}
+
+.logo {
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.logo img {
+    width: 80px; /* Defina a largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.logo ion-icon {
+    font-size: 40px; /* Ajuste o tamanho conforme desejado */
+}
+.chat {
+    flex-grow: 1; /* Faz o chat ocupar o espaço disponível */
+    width: 100%;
+    background-color: #f3f3f3;
+    overflow-y: auto; /* Adiciona rolagem ao chat apenas, se necessário */
+}
+
+.send {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.send ion-icon {
+    font-size: 30px; /* Ajuste o tamanho conforme desejado */
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.send input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#messageStatus {
+    font-size: 12px;
+    color: #333;
+    margin-top: 5px;
+}
+
+#sendIcon {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+.message {
+    padding: 10px;
+    margin: 2px 0;
+    color: #333;
+}
+
+.message.status {
+    background-color: gray;
+}
+
+.message.reserved {
+    background-color: red;
+}
+
+.message.normal {
+    background-color: white;
+}
+.send input::placeholder {
+    font-weight: bold; /* Negrito */
+    font-style: italic; /* Cursiva */
+}
+
+.overlay {
+    position: fixed; /* Use fixed para garantir que a overlay não se mova com o conteúdo */
+    top: 0;
+    left: 116px; /* Deixa 116px do lado esquerdo */
+    width: calc(100% - 116px); /* Ocupa a largura total menos 116px do lado esquerdo */
+    height: 100vh; /* Ocupa a altura total do viewport */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Sobrepõe ao restante do conteúdo */
+}
+
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%; /* Largura ajustada ao tamanho do chat */
+    max-width: 350px; /* Limita a largura máxima */
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contacts, .visibility {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Botão de fechar */
+.close-overlay {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-overlay:hover {
+    background-color: darkred;
+}
